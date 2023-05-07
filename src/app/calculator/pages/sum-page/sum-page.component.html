@@ -16,9 +16,8 @@
                            formControlName="num1"
                            placeholder="">
 
-                    <span class="form-text text-danger">
-                        <!-- Debe de ser de 3 letras -->
-                        error message
+                    <span *ngIf="myForm.controls['num1'].getError('required') && myForm.controls['num1'].touched"  class="form-text text-danger">
+                        Campo requerido
                     </span>
                 </div>
             </div>
@@ -31,8 +30,8 @@
                            class="form-control"
                            formControlName="num2"
                            placeholder="Precio del producto">
-                    <span class="form-text text-danger">
-                        El precio debe de ser mayor que 0
+                    <span *ngIf="myForm.controls['num2'].getError('required') && myForm.controls['num2'].touched"  class="form-text text-danger">
+                            Campo requerido
                     </span>
                 </div>
             </div>
@@ -47,7 +46,9 @@
                 </div>
             </div>
 
-
+            <span *ngIf="myForm.controls['result'].value != 0">
+              Resultado: {{myForm.controls['result'].value}}
+            </span>
 
         </form>
 
@@ -57,25 +58,4 @@
 
 
 
-<div class="row">
-    <div class="col">
 
-        <span>Valid</span>
-        <pre>{{ myForm.valid | json }}</pre>
-
-        <span>Pristine</span>
-        <pre>{{ myForm.pristine | json }}</pre>
-
-        <span>Touched</span>
-        <pre>{{ myForm.touched | json }}</pre>
-
-        <span>Value</span>
-        <pre>{{ myForm.value | json }}</pre>
-
-        <span>Num 1</span>
-        <pre>{{ myForm.controls['num1'].value | json }}</pre>
-
-        <span>Num 2</span>
-        <pre>{{ myForm.controls['num2'].value | json }}</pre>
-    </div>
-</div>

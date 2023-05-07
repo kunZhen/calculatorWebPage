@@ -8,6 +8,7 @@ import { DivisionPageComponent } from './pages/division-page/division-page.compo
 import { MultiplicationPageComponent } from './pages/multiplication-page/multiplication-page.component';
 import { SubtractionPageComponent } from './pages/subtraction-page/subtraction-page.component';
 import { CalculatorLayoutComponent } from './layout/calculator-layout/calculator-layout.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { CalculatorLayoutComponent } from './layout/calculator-layout/calculator
   ],
   imports: [
     CommonModule,
-    CalculatorRoutingModule
+    CalculatorRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class CalculatorModule { }

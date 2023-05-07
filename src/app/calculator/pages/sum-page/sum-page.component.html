@@ -1,1 +1,81 @@
-<p>sum-page works!</p>
+<h2>SUMA</h2>
+<hr>
+
+<div class="row">
+    <div class="col">
+
+        <form [formGroup]="myForm" (ngSubmit)="onSave()" autocomplete="off">
+
+            <!-- Campo de producto -->
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Primero número</label>
+                <div class="col-sm-9">
+
+                    <input type="number"
+                           class="form-control"
+                           formControlName="num1"
+                           placeholder="">
+
+                    <span class="form-text text-danger">
+                        <!-- Debe de ser de 3 letras -->
+                        error message
+                    </span>
+                </div>
+            </div>
+
+            <!-- Campo de producto -->
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Segundo número</label>
+                <div class="col-sm-9">
+                    <input type="number"
+                           class="form-control"
+                           formControlName="num2"
+                           placeholder="Precio del producto">
+                    <span class="form-text text-danger">
+                        El precio debe de ser mayor que 0
+                    </span>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col">
+                    <button type="submit"
+                            class="btn btn-primary float-end">
+                        Calcular
+                    </button>
+                </div>
+            </div>
+
+
+
+        </form>
+
+    </div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col">
+
+        <span>Valid</span>
+        <pre>{{ myForm.valid | json }}</pre>
+
+        <span>Pristine</span>
+        <pre>{{ myForm.pristine | json }}</pre>
+
+        <span>Touched</span>
+        <pre>{{ myForm.touched | json }}</pre>
+
+        <span>Value</span>
+        <pre>{{ myForm.value | json }}</pre>
+
+        <span>Num 1</span>
+        <pre>{{ myForm.controls['num1'].value | json }}</pre>
+
+        <span>Num 2</span>
+        <pre>{{ myForm.controls['num2'].value | json }}</pre>
+    </div>
+</div>

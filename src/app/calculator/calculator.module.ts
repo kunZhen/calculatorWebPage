@@ -12,7 +12,6 @@ import { CalculatorLayoutComponent } from './layout/calculator-layout/calculator
 
 @NgModule({
   declarations: [
-    SideMenuComponent,
     SumPageComponent,
     DivisionPageComponent,
     MultiplicationPageComponent,

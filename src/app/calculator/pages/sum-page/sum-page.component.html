@@ -8,13 +8,12 @@
 
             <!-- Campo de producto -->
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Primero número</label>
+                <label class="col-sm-3 col-form-label">Primer número</label>
                 <div class="col-sm-9">
 
                     <input type="number"
                            class="form-control"
-                           formControlName="num1"
-                           placeholder="">
+                           formControlName="num1">
 
                     <span *ngIf="myForm.controls['num1'].getError('required') && myForm.controls['num1'].touched"  class="form-text text-danger">
                         Campo requerido
@@ -28,8 +27,7 @@
                 <div class="col-sm-9">
                     <input type="number"
                            class="form-control"
-                           formControlName="num2"
-                           placeholder="Precio del producto">
+                           formControlName="num2">
                     <span *ngIf="myForm.controls['num2'].getError('required') && myForm.controls['num2'].touched"  class="form-text text-danger">
                             Campo requerido
                     </span>

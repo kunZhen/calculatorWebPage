@@ -1,1 +1,59 @@
-<p>subtraction-page works!</p>
+<h2>RESTA</h2>
+<hr>
+
+<div class="row">
+    <div class="col">
+
+        <form [formGroup]="myForm" (ngSubmit)="onSave()" autocomplete="off">
+
+            <!-- Campo de producto -->
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Primer número</label>
+                <div class="col-sm-9">
+
+                    <input type="number"
+                           class="form-control"
+                           formControlName="num1">
+
+                    <span *ngIf="myForm.controls['num1'].getError('required') && myForm.controls['num1'].touched"  class="form-text text-danger">
+                        Campo requerido
+                    </span>
+                </div>
+            </div>
+
+            <!-- Campo de producto -->
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Segundo número</label>
+                <div class="col-sm-9">
+                    <input type="number"
+                           class="form-control"
+                           formControlName="num2">
+                    <span *ngIf="myForm.controls['num2'].getError('required') && myForm.controls['num2'].touched"  class="form-text text-danger">
+                            Campo requerido
+                    </span>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col">
+                    <button type="submit"
+                            class="btn btn-primary float-end">
+                        Calcular
+                    </button>
+                </div>
+            </div>
+
+            <span *ngIf="myForm.controls['num1'].value != 0 && myForm.controls['num2'].value != 0">
+              Resultado: {{myForm.controls['result'].value}}
+            </span>
+
+        </form>
+
+    </div>
+</div>
+
+
+
+
+
